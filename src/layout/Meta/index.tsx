@@ -2,7 +2,6 @@ import { NextSeo } from "next-seo";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-import { useLanguage } from "../../hooks/useLanguage";
 import { AppConfig } from "../../utils/appConfig";
 
 type IMetaProps = {
@@ -13,7 +12,6 @@ type IMetaProps = {
 
 const Meta = (props: IMetaProps) => {
   const router = useRouter();
-  const { language } = useLanguage();
 
   return (
     <>

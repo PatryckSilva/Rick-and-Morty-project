@@ -3,14 +3,7 @@ import { createContext, ReactNode, useEffect, useState } from "react";
 import useSWR from "swr";
 import { getStorage, setStorage } from "utils-react";
 
-import { useAuth } from "../hooks/useAuth";
-import { useCurrentUser } from "../hooks/useCurrentUser";
-import {
-  atomicFetcher,
-  bloksFetcher,
-  SWRCacheKeyGetters,
-} from "../services/swr";
-import { rede } from "../utils/rede";
+import { atomicFetcher, SWRCacheKeyGetters } from "../services/swr";
 
 interface IFetchProvider {
   children: ReactNode;
@@ -23,7 +16,5 @@ interface FetchContextProps {}
 export const FetchContext = createContext({} as FetchContextProps);
 
 export const FetchProvider = ({ children }: IFetchProvider) => {
-  const { currentUser } = useCurrentUser();
-
   return <FetchContext.Provider value={{}}>{children}</FetchContext.Provider>;
 };

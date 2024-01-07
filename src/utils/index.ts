@@ -1,7 +1,5 @@
 /* eslint-disable object-shorthand */
 
-import { IFPS_URL } from "./constants";
-
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export const expirationValidator = (expiration: number, callFunction: any) => {
   if (expiration < Date.now()) {
@@ -151,7 +149,7 @@ export const assetFormat = (data: any[]) => {
       data: {
         ...mutableData,
         name: immutableData.name,
-        img: IFPS_URL + mutableData.img,
+        img: mutableData.img,
       },
       row: null,
       template_mint: +item.template_mint,
