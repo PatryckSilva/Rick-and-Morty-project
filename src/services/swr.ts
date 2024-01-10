@@ -2,26 +2,16 @@ import axios from "axios";
 import { mutate } from "swr";
 
 import { arrayEquals, delay } from "../utils";
+import { config } from "../utils/constants";
 
-export class SWRCacheKeyGetters {}
+export class SWRCacheKeyGetters {
+  static getCharacters = (page: number) => {
+    return `${config.apiEndpoint}/character?page=${page}`;
+  };
+}
 
-export const atomicFetcher = async (url: string) => {
-  let nonce = Date.now();
-  let pageNumber = 1;
-
-  let data = [];
-  while (true) {
-    const response = await axios.get(
-      `${url}&limit=1000&page=${pageNumber}&nonce=${nonce}`,
-    );
-    data = [...data, ...response.data.data] as any;
-    pageNumber++;
-    nonce = Date.now() + 1;
-    if (response.data.data.length < 1000) {
-      break;
-    }
-  }
-
+export const fetcher = async (url: string) => {
+  const { data } = await axios.get(url);
   return data;
 };
 
@@ -37,7 +27,6 @@ export const mutateApiData = async (
   key: any,
   currentData: any,
   fetcher: (url: string) => Promise<any>,
-  property: string,
   retries = 1,
   time = 2,
 ) => {
@@ -51,11 +40,11 @@ export const mutateApiData = async (
 
   if (isEqual) {
     if (retries <= 6) {
-      await delay(10000);
-      mutateApiData(key, currentData, fetcher, property, retries + 1, time);
+      await delay(2000);
+      mutateApiData(key, currentData, fetcher, retries + 1, time);
     } else {
-      await delay(10000 * time);
-      mutateApiData(key, currentData, fetcher, property, retries + 1, time + 1);
+      await delay(2000 * time);
+      mutateApiData(key, currentData, fetcher, retries + 1, time + 1);
     }
 
     return true;

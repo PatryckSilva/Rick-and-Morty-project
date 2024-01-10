@@ -12,7 +12,8 @@ import { AppProps } from "next/app";
 import { useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 
-import { FetchProvider } from "../context/FetchContext";
+import { FetchProviders } from "../hooks/FetchProvider";
+import { MainTemplate } from "../templates";
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -20,20 +21,27 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <FetchProvider>
-      <ThemeProvider attribute="class">
+    <ThemeProvider attribute="class">
+      <RenderFetchs />
+      <MainTemplate>
         <Component {...pageProps} />
-        <Toaster
-          toastOptions={{
-            // Define default options
-            duration: 5000,
-            position: "top-right",
-          }}
-          gutter={15}
-        />
-      </ThemeProvider>{" "}
-    </FetchProvider>
+      </MainTemplate>
+      <Toaster
+        toastOptions={{
+          // Define default options
+          duration: 5000,
+          position: "top-right",
+        }}
+        gutter={15}
+      />
+    </ThemeProvider>
   );
 }
 
 export default MyApp;
+
+const RenderFetchs = () => {
+  FetchProviders();
+
+  return <></>;
+};
