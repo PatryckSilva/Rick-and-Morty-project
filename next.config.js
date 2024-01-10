@@ -21,20 +21,7 @@ const nextConfig = {
     ],
   },
   env: {
-    atomicTestnet: process.env.ATOMIC_TESTNET,
-    atomicMainet: process.env.ATOMIC_MAINET,
-    bloksTestnet: process.env.BLOKS_TESTNET,
-    bloksMainet: process.env.BLOKS_MAINET,
-    contractAccountMainet: process.env.CONTRACT_ACCOUNT_MAINET,
-    contractAccountTestnet: process.env.CONTRACT_ACCOUNT_TESTNET,
-    collectionNameMainet: process.env.COLLECTION_NAME_MAINET,
-    collectionNameTestnet: process.env.COLLECTION_NAME_TESTNET,
-    ga_tracking: process.env.GA_TRACKING,
-    chainIdMainet: process.env.CHAIN_ID_MAINET,
-    chainIdTestnet: process.env.CHAIN_ID_TESTNET,
-    appNameTest: process.env.APP_NAME_TEST,
-    appNameMainet: process.env.APP_NAME_MAINET,
-    host: process.env.HOST,
+    apiEndpoint: process.env.API_ENDPOINT,
   },
 };
 

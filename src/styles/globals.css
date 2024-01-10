@@ -17,7 +17,7 @@
 html,
 body {
   font-family: "Inter", sans-serif;
-  @apply overflow-x-hidden !bg-basket_blue-950 text-primary;
+  @apply overflow-x-hidden !bg-[#131313] text-primary;
   scroll-behavior: smooth !important;
 }
 
@@ -50,4 +50,41 @@ body::-webkit-scrollbar-thumb {
 /* timing for animations */
 .transition-time {
   @apply transition-all duration-300 ease-in-out;
+}
+
+.pagination {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-tertiary);
+  gap: 5px;
+  user-select: none;
+
+  flex-wrap: wrap;
+}
+@media (max-width: 500px) {
+  .pagination {
+    max-width: 350px;
+  }
+}
+
+.pagination .page-num {
+  padding: 8px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight: 400;
+  font-size: 18px !important;
+}
+
+.pagination .page-num:hover {
+  @apply bg-white/30;
+}
+
+.pagination .disabled {
+  display: none;
+}
+
+.pagination .active {
+  @apply bg-white/30;
 }
