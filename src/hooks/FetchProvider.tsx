@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+"use client";
 import { useEffect, useState } from "react";
 import useSWR from "swr";
 import { fetcher } from "utils-react";
@@ -25,7 +27,7 @@ export const FetchProviders = () => {
     }
   }, [dataCharacters]);
 
-  const handlePaginationCharacters = event => {
+  const handlePaginationCharacters = (event: any) => {
     setPaginationFetch(event.selected + 1);
   };
 

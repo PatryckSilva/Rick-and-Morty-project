@@ -4,9 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-
-/public/sw.js
-/public/workbox*.js
+.yarn/install-state.gz
 
 # testing
 /coverage
@@ -17,7 +15,6 @@
 
 # production
 /build
-/.env
 
 # misc
 .DS_Store
@@ -29,13 +26,11 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env*.local
 
 # vercel
 .vercel
 
-package-lock.json
-/src/utils/rede.ts
+# typescript
+*.tsbuildinfo
+next-env.d.ts

@@ -1,16 +1,10 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 
+import { CharacterType, InfoType } from "@/@types";
 import { create } from "zustand";
 
-type InfoType = {
-  count: number;
-  pages: number;
-  next: string;
-  prev: any;
-};
-
 type CharacterStore = {
-  characters: any[];
+  characters: CharacterType[];
   isLoadingCharacters: boolean;
   setCharacters: (characters: any[]) => void;
   setIsLoadingCharacters: (isLoadingCharacters: boolean) => void;

@@ -3,5 +3,8 @@
   "editor.formatOnPaste": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
+  },
+  "eslint.options": {
+    "configFile": "./.eslintrc.json"
   }
 }

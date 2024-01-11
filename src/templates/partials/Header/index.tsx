@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -5,18 +6,18 @@ import { useState } from "react";
 import { DropDown } from "../HeaderMobile";
 import { dataHeader } from "./data";
 
-interface Props {
-  className?: string;
-  offset: number;
-}
-interface Countdown {
-  days: number;
-  hours: number;
-  minutes: number;
-  seconds: number;
-}
+// interface Props {
+//   className?: string;
+//   offset?: number;
+// }
+// interface Countdown {
+//   days: number;
+//   hours: number;
+//   minutes: number;
+//   seconds: number;
+// }
 
-export const Header = ({ offset }: Props) => {
+export const Header = () => {
   const router = useRouter();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +29,7 @@ export const Header = ({ offset }: Props) => {
   return (
     <>
       <header
-        className={`bg-header fixed z-[100] flex h-[50px] w-screen items-center justify-between text-[#ccc] md:h-[100px]
+        className={`bg-header fixed z-[100] flex h-[50px] w-screen items-center justify-between text-] md:h-[100px]
         ${isOpen ? " !border-0 !border-b-0" : ""}`}
       >
         <div className={`flex items-center gap-5`}>
