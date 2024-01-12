@@ -16,14 +16,14 @@ import { NextPage } from "next";
 import Image from "next/image";
 import ReactPaginate from "react-paginate";
 
-import { FetchProviders } from "../hooks/FetchProvider";
+import { fetchProviders } from "../Providers/FetchProvider";
 import useCharactersStore from "../store/characters";
 
 const Home: NextPage = () => {
   const { characters, info } = useCharactersStore(state => state);
 
   const pages: number = info?.pages;
-  const { handlePaginationCharacters } = FetchProviders();
+  const { handlePaginationCharacters } = fetchProviders();
 
   return (
     <main className={`flex flex-col`}>

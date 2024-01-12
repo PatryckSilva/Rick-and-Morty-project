@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-"use client";
 import { useEffect, useState } from "react";
 import useSWR from "swr";
 import { fetcher } from "utils-react";
@@ -7,9 +5,10 @@ import { fetcher } from "utils-react";
 import { SWRCacheKeyGetters } from "../services/swr";
 import useCharactersStore from "../store/characters";
 
-export const FetchProviders = () => {
+export const fetchProviders = () => {
   const charactersInitialPage = 1;
   const [paginationFetch, setPaginationFetch] = useState<any>();
+
   const { data: dataCharacters, isLoading: isLoadingCharacters } = useSWR(
     SWRCacheKeyGetters.getCharacters(paginationFetch || charactersInitialPage),
     fetcher,
