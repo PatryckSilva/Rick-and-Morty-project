@@ -1,9 +1,14 @@
 "use client";
 
-import { fetchProviders } from "./FetchProvider";
+
 import { MainTemplate } from "@/templates";
+import { ThemeProvider } from "next-themes";
 
 export const Providers = ({ children }: { children: React.ReactNode }) => {
-  fetchProviders();
-  return <MainTemplate>{children}</MainTemplate>;
+
+  return (
+    <ThemeProvider attribute="class">
+      <MainTemplate>{children}</MainTemplate>
+    </ThemeProvider>
+  );
 };

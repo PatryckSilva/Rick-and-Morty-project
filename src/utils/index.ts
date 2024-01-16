@@ -192,8 +192,6 @@ export const removeDuplicatesCards = (assets: any[], isFree: boolean) => {
 
   const arr = Array.from(assetsNoDuplicates.values());
 
-  // console.log({assetsNoDuplicates, assetsDuplicates, arr});
-
   return arr;
 };
 
@@ -272,8 +270,8 @@ export const findDayOfWeek = (value: string) => {
   return dayOfWeek.toString();
 };
 
-export const findFantasy = (item: any, findingDayRoundId) => {
+export const findFantasy = (item: any, findingDayRoundId: any) => {
   return item.data.fantasy.find(
-    val => Number(val.day_round_id) === Number(findingDayRoundId),
+    (val: any) => Number(val.day_round_id) === Number(findingDayRoundId),
   );
 };
