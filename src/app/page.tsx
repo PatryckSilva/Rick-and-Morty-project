@@ -1,10 +1,13 @@
-import { InitialFrame } from "@/components/Frames/InitialFrame";
+import { ListHomeFrame } from "@/components/Frames/ListHomeFrame";
+import PresentationFrame from "@/components/Frames/PresentationFrame";
+
 import { NextPage } from "next";
 
-const Home: NextPage = () => {
+const Home: NextPage = async () => {
   return (
     <>
-      <InitialFrame />
+      <PresentationFrame />
+      <ListHomeFrame />
     </>
   );
 };

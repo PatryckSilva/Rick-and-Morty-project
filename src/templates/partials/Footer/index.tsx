@@ -1,3 +1,4 @@
+"use client";
 import { FaDiscord, FaMediumM, FaTwitter } from "react-icons/fa";
 
 export const Footer = () => {

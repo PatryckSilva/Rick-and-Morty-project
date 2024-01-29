@@ -1,20 +1,7 @@
 import { ReactNode } from "react";
 
-export interface ISWR {
-  data: any;
-  error: any;
-  isValidating: boolean;
-  isLoading: boolean;
-}
-
 export interface LayoutProviderProps {
   children: ReactNode;
-}
-
-export interface IMutateOptions {
-  key: any;
-  currentData: any;
-  fetcher: (url: string) => Promise<any>;
 }
 
 export type InfoType = {
@@ -34,7 +21,7 @@ export interface Location {
   url: string;
 }
 
-export interface CharacterType {
+export interface ICharacter {
   id: number;
   name: string;
   status: string;

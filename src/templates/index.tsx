@@ -1,4 +1,3 @@
-"use client";
 import { ReactNode } from "react";
 
 import { Footer } from "./partials/Footer";
@@ -13,9 +12,7 @@ export const MainTemplate = ({ children }: Props) => {
     <main>
       <Header />
       <div className="flex min-h-screen flex-col">
-        <div className="md:min-h-[calc(100vh - 100px)] mt-[50px] min-h-[calc(100vh-80px)] md:mt-[100px]">
-          {children}
-        </div>
+        {children}
         <Footer />
       </div>
     </main>
